@@ -10,12 +10,23 @@ import java.util.List;
 
 public class ListOfWordController {
     List<String> listOfWord = new ArrayList<>();
+
     @GetMapping
-    public int getTheLengthOfList(){
+    public int getTheLengthOfList() {
         return listOfWord.size();
     }
+
     @PostMapping("{word}/work")
-    public void addOneWordInList(@PathVariable String word){
+    public void addOneWordInList(@PathVariable String word) {
         listOfWord.add(word);
     }
+
+    //alternativní metoda zápisu pokud se nezhoduje word s word / zde je word = wordForAdding proto tam musí být @PahVariable("word")
+
+//    @PostMapping("{word}/work")
+//    public void addOneWordInList(
+//            @PathVariable("word") String wordForAdding){
+//        listOfWord.add(wordForAdding);
+//    }
+
 }
